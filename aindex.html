@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Extreme Puzzle Game</title>
+<style>
+  body { font-family: Arial; background: #111; color: #eee; text-align: center; padding: 50px;}
+  button { padding: 10px 20px; margin: 10px; font-size: 18px;}
+  .hidden { display: none; }
+  .trap { color: #ff5555; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>🕵️‍♂️ Extreme 6-Level Puzzle</h1>
+<p>Solve all 6 levels to reveal the secret code!</p>
+
+<div id="level1">
+  <h2>Level 1 – Prime Illusion</h2>
+  <p>I am a prime number between 1 and 5. Which one am I?</p>
+  <button onclick="nextLevel(1,3)">2</button>
+  <button onclick="nextLevel(1,3)">3</button>
+  <button onclick="trap()">5</button>
+</div>
+
+<div id="level2" class="hidden">
+  <h2>Level 2 – Factor-Entropy</h2>
+  <p>Pick a factor of 25 that is odd and between 1 and 10.</p>
+  <button onclick="trap()">1</button>
+  <button onclick="nextLevel(2,5)">5</button>
+  <button onclick="trap()">25</button>
+</div>
+
+<div id="level3" class="hidden">
+  <h2>Level 3 – Divisible Paradox</h2>
+  <p>I am less than 10 and divisible by 2 or 3, but not the smallest divisor. Which am I?</p>
+  <button onclick="trap()">2</button>
+  <button onclick="trap()">3</button>
+  <button onclick="trap()">4</button>
+  <button onclick="nextLevel(3,6)">6</button>
+  <button onclick="trap()">8</button>
+</div>
+
+<div id="level4" class="hidden">
+  <h2>Level 4 – Mirror-Doubling</h2>
+  <p>Double its half, subtract last digit, then pick the smallest even number. Choose carefully.</p>
+  <button onclick="trap()">2</button>
+  <button onclick="trap()">4</button>
+  <button onclick="trap()">6</button>
+  <button onclick="nextLevel(4,8)">8</button>
+</div>
+
+<div id="level5" class="hidden">
+  <h2>Level 5 – Prime-Even Enigma</h2>
+  <p>I am the only even prime under 5. Choose me carefully.</p>
+  <button onclick="nextLevel(5,2)">2</button>
+  <button onclick="trap()">4</button>
+</div>
+
+<div id="level6" class="hidden">
+  <h2>Level 6 – Final Rare Key</h2>
+  <p>I am prime, larger than 5 and smaller than 10. Final choice!</p>
+  <button onclick="trap()">5</button>
+  <button onclick="finish(7)">7</button>
+</div>
+
+<div id="final" class="hidden">
+  <h2>🎉 Congratulations!</h2>
+  <p>You solved all levels. The secret code is:</p>
+  <h1>356827</h1>
+</div>
+
+<div id="trap" class="hidden trap">
+  <h2>🚨 Wrong Choice!</h2>
+  <p>Oops! That breaks the chain. Refresh to try again.</p>
+</div>
+
+<script>
+function nextLevel(current, answer) {
+  document.getElementById("level"+current).classList.add("hidden");
+  document.getElementById("level"+(current+1)).classList.remove("hidden");
+}
+
+function finish(answer) {
+  document.getElementById("level6").classList.add("hidden");
+  document.getElementById("final").classList.remove("hidden");
+}
+
+function trap() {
+  var levels = document.querySelectorAll("[id^='level']");
+  levels.forEach(l => l.classList.add("hidden"));
+  document.getElementById("trap").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>

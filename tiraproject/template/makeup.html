@@ -1,0 +1,91 @@
+{% extends "nav.html" %}
+
+{% block new %}
+
+
+{% comment %} <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/company/1/applications/62d53777f5ad942d3e505f77/theme/pictures/free/resize-w:1280/theme-image-1746425570634.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/company/1/applications/62d53777f5ad942d3e505f77/theme/pictures/free/resize-w:1280/theme-image-1746290316127.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/company/1/applications/62d53777f5ad942d3e505f77/theme/pictures/free/resize-w:1280/theme-image-1746425591346.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/company/1/applications/62d53777f5ad942d3e505f77/theme/pictures/free/resize-w:1280/theme-image-1746304568065.jpeg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> {% endcomment %}
+<div class="container mt-5" style="margin-top: 0px;">
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <h3 class="text-capitalize">All {{ name }}</h3>
+        </div>
+        <div class="col-md-9">
+            <div class="brand_list">
+                {% comment %} {% if category %} {% endcomment %}
+                    <ul class="list-unstyled d-flex gap-3 align-items-center justify-content-end">
+                        <li><a href="/category/{{name}}" class="active text-decoration-none text-black fw-bold btn btn-sm btn-outline-black">All</a></li>
+                        {% for brand in brands %}
+                            <li><a href="/category_brand/{{name}}/{{brand.name}}" class="text-decoration-none text-capitalize text-black fw-bold btn btn-sm ">{{ brand.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% comment %} {% endif %} {% endcomment %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+        <div class="row">
+
+
+            {% if products|length == 0 %} 
+                <h1 class="text-center my-5">No Product Available</h1>
+            
+            {% else %}
+                {% for product in products %}
+                <div class="col-md-4 p-3">
+                    <div class="card product-card">
+                        <div class="position-relative">
+                            {% comment %} <span class="sale-badge">SALE</span> {% endcomment %}
+                            {% comment %} {{product.name}} {% endcomment %}
+                            <div class="col mno">
+                                <a href="{% url "singal_product" product.id %}"><img src="{{  product.img.url  }}" class="card-img-top" alt="Product Image"> </a>
+                                <p class="card-text text-muted">
+                                    {{  product.description | slice:":50"  }}...
+                                </p>
+                                <h5 class="text-dark">₹ {{  product.price }} 
+
+                                {% comment %} <img src="https://www.tanishq.co.in/dw/image/v2/BKCK_PRD/on/demandware.static/-/Sites-Tanishq-product-catalog/default/dwcfbf242b/images/hi-res/2923FZP_1.jpg?sw=360&sh=360"width="100%"> {% endcomment %}
+                                {% comment %} <div>Forever Band 18KT Gold Couple Ring -Single Piece</div> {% endcomment %}
+                                {% comment %} <div>$ 252.00</div> {% endcomment %}
+                              </div>
+                        </div>
+                        
+                            
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+            
+
+        </div>
+    </div>
+{% endblock new %}

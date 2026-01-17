@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.header{
+    width: 100%;
+    height: 20px;
+    background-color:black;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-evenly
+    
+
+}
+
+.header .logo {
+    color: red;
+    padding-right: 30%;
+}
+
+.header .logo:hover{
+    color: brown;
+    cursor: pointer;
+}
+
+.header a{
+    color: aquamarine;
+    text-decoration: none;
+}
+
+.header a:hover{
+    color: chocolate;
+}
+
+.hero{
+    background-image: url(/image/car.jpg);
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    background-size:auto;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    background-repeat: no-repeat;
+}
+
+.hero h3{
+    color: rgb(147, 173, 22);
+    
+}
+.hero h3:hover{
+    color: rgb(226, 43, 134);
+}
+
+.con{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 20px;
+
+}
+
+.con .v1{
+    width: 25%
+    
+}
+.con .v2{
+    width: 25%
+    
+}
+
+.con .v3{
+    width: 25%
+    
+}
+
+.con3{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.con3 .v10{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.con3 .v10 img{
+    width: 100%;
+    padding-top: 20px;
+    border-radius: 30%;
+
+}
+
+.footer{
+    width: 100%;
+    height: 50vh;
+    background-color: black;
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: left;
+    color: white;
+
+    
+}
+
+.con3 .v10 img:hover{
+    border: 50%;
+    border-color: brown;
+    cursor: pointer;
+}
+
+
+.footer .par li{
+    padding-top: 20px;
+    padding-left: 50px;
+
+
+    
+}
+
+@media screen and (max-width: 650px) {
+
+    .con{
+        flex-wrap: wrap;
+    }
+
+
+    .con .v1{
+        width:50%;
+    }
+
+    .con .v2{
+        width:50%;
+    }
+
+    .con .v3{
+        width:50%;
+    }
+    
+}
+
+@media screen and(max-width: 650) {
+
+    .hero h3{
+        font-size: small;
+    }
+    
+}
+
+@media screen and (max-width:500) {
+
+    .header .logo a{
+        display: none;
+    }   
+}
+
+@media screen and (max-width:500) {
+
+    .header .logo{
+        display: flex;
+        text-align: center;
+        justify-content: center
+        
+    }
+}

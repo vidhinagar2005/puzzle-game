@@ -1,0 +1,45 @@
+<h2>Pay Rs. {{ amount|floatformat:2 }}</h2>
+<button id="rzp-button1">Pay with Razorpay</button>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    var options = {
+        "key": "{{ razorpay_key_id }}",
+        "amount": "{{ amount }}",
+        "currency": "INR",
+        "name": "My Django Shop",
+        "description": "Test Transaction",
+        "order_id": "{{ order_id }}",
+        "handler": function (response){
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = "{{ callback_url }}";
+
+            var csrfToken = document.createElement('input');
+            csrfToken.type = 'hidden';
+            csrfToken.name = 'csrfmiddlewaretoken';
+            csrfToken.value = '{{ csrf_token }}';
+            form.appendChild(csrfToken);
+
+            var fields = ['razorpay_payment_id', 'razorpay_order_id', 'razorpay_signature'];
+            fields.forEach(function(field){
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = field;
+                input.value = response[field];
+                form.appendChild(input);
+            });
+
+            document.body.appendChild(form);
+            form.submit();
+        },
+        "theme": {
+            "color": "#3399cc"
+        }
+    };
+    var rzp1 = new Razorpay(options);
+    document.getElementById('rzp-button1').onclick = function(e){
+        rzp1.open();
+        e.preventDefault();
+    }
+</script>

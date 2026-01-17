@@ -1,0 +1,16 @@
+h2{
+    width: 20ch;
+    font-family: monospace;
+    text-wrap: nowrap;
+    overflow: hidden;
+    animation:alternate 2s steps(20) infinite;
+}
+
+@keyframes typing{
+    from{
+        width: 0ch;
+    }
+}
+
+
+

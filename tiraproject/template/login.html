@@ -1,0 +1,90 @@
+{% extends "nav.html" %}
+
+{% block new %}
+<div class="container mb-5 border shadow">
+    <div class="row justify-content-center">
+        <div class="col-lg-7 col-12">
+            <div class="container-sm title mb-4 mt-3">
+                <h4 class="text-center fs-3 fw-bold py-2">Log In</h4>
+            </div>
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="color: red;">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+
+            <div class="form-wrapper">
+                <form action="" method="post" class="login-form">
+                    {% csrf_token %}
+                    <div class="form-container">
+                        <div class="form-heading">
+                            <h4>Log In</h4>
+                        </div>
+                    </div>
+
+                    <div class="form-container ">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>I am a returning customer</p>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group field">
+                                    <label for="email">User Name :</label>
+                                    <input type="text" name="username" class="form-control" id="email" placeholder="User Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group field">
+                                    <label for="password">Password :</label>
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    {% comment %} <div class="form-container">
+                        <div class="row d-flex align-items-center justify-content-end">
+                            <div class="col-12 d-flex align-items-center justify-content-end">
+                                <a href="#" class="text-danger text-center me-4">Forgot Password?</a>
+                                <button type="submit" class="btn btn-dark shadow-sm fw-bold text-center px-4 py-2 submit-btn">Log In<i class="fa-solid fa-arrow-right ms-2"></i></button>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+
+                    <div class="form-container border-0 mt-4">
+                        <div class="row d-flex align-items-center justify-content-end">
+                            <div class="col-12 d-flex align-items-center justify-content-center">
+                                {% comment %} <a href="{% url 'register' %}" type="submit" class="btn btn-dark shadow-sm fw-bold text-center px-4 py-2 submit-btn">Register<i class="fa-solid fa-arrow-right ms-2"></i></a> {% endcomment %}
+                                <button type="submit" class="btn btn-dark shadow-sm fw-bold text-center px-4 py-2 submit-btn">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-container border-0">
+                        <div class="row d-flex align-items-center justify-content-end">
+                            <div class="col-12 d-flex align-items-center justify-content-center">
+                                <div class="reg-lbl mb-4">If you dont have account</div>
+                                <a href="{% url 'register' %}" type="submit" class="btn btn-dark shadow-sm fw-bold text-center px-4 py-2 submit-btn ms-4 mb-4">Register<i class="fa-solid fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock new %}
+
+
+
+
+
+

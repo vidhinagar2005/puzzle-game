@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-image: url("image/instagram.webp" );
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+
+    .wrapper{
+        width: 30%;
+        background-color:rgba(0, 0, 0, 0.5);
+        margin: auto;
+        margin-top: 30px;
+        padding: 2rem;
+        border-radius: 6px;
+    }
+
+    input{
+        background-color: black;
+        border-radius: 5px;
+        color: antiquewhite;
+        border-color: antiquewhite;
+        margin: 5px;
+        padding: 5px;
+        width: 70%;
+        margin-left: 50px;
+        background-color:black;
+        
+    }
+
+    .logo{
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button{
+        background-color: blue;
+        border-radius: 30px;
+        width: 75%;
+        margin-left:42px;
+        padding: 5px;
+        margin-top: 10px;
+        border: none;
+        color: white;
+        
+    }
+
+    /* .or{
+        color: white;
+        text-align: center;
+        margin-bottom: 30px;
+        width: 50%;
+        margin: auto;
+        margin-top: -18px; */
+        
+    /* } */
+
+    .or{
+        color: white;
+        padding:0px 0px;
+    }
+    .a1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 30px;
+    }
+    .v1{
+        border:1px solid white;
+        width: 40%;
+    }
+    h5{
+        color: white;
+        padding-right: 20px;
+        /* text-align: right; */
+    }
+ 
+    .forgot{
+        display: flex;
+        align-items: center; 
+        justify-content:center;
+        padding-top: 30px;
+    }
+    .forgot h5:hover{
+        color: black;
+        cursor: pointer;
+
+    }
+
+    button:hover{
+        cursor: pointer;
+    }
+    
+</style>
+<body>
+    
+    <div class="wrapper">
+        <div class="logo">
+          <img src="/image/insta2.png" width="30%">
+        </div>
+        
+          <div>  <input type="text" name="fname" placeholder="phone number username or Email address"></div>
+
+        
+            <div>  <input type="password" name="password" placeholder="Password"></div>
+
+       
+        <div>
+            <button>Log in</button>
+        </div>
+        <div class="a1">
+            <div class="v1"></div>
+            <div class="or">or</div>
+            <div class="v1"></div>
+        </div>
+
+        <div class="forgot">
+            <h5>Forgot password?</h5>
+        </div>
+
+   
+    </div>
+      
+</body>
+</html>
