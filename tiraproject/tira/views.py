@@ -114,12 +114,12 @@ def home(request):
 
 def category(request, name):
     categories = Category.objects.all()
-    category = get_object_or_404(Category, name=name)
+    category2 = get_object_or_404(Category, name=name)
     print(category)
     products = category.product_set.all()
     print(products)
     brand = Brand.objects.all()
-    return render(request, 'makeup.html', {'categories': categories,'products': products, 'brands': brand,'name': category})
+    return render(request, 'makeup.html', {'categories': categories,'products': products, 'brands': brand,'name': category2})
 
 def singal_product(request, product_id):
     categories = Category.objects.all()
