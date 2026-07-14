@@ -119,7 +119,7 @@ def category(request, name):
     products = category.product_set.all()
     print(products)
     brand = Brand.objects.all()
-    return render(request, 'makeup.html', {'categories': categories,'products': products, 'brands': brand,'name': name})
+    return render(request, 'makeup.html', {'categories': categories,'products': products, 'brands': brand,'name': category})
 
 def singal_product(request, product_id):
     categories = Category.objects.all()
