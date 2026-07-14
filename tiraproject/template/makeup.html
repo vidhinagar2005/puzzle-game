@@ -62,12 +62,12 @@
             {% else %}
                 {% for product in products %}
                 <div class="col-md-4 p-3">
-                    <div class="card product-card">
+                    <div class="card  product-card">
                         <div class="position-relative">
                             {% comment %} <span class="sale-badge">SALE</span> {% endcomment %}
                             {% comment %} {{product.name}} {% endcomment %}
                             <div class="col mno">
-                                <a href="{% url "singal_product" product.id %}"><img src="{{  product.img.url  }}" class="card-img-top" alt="Product Image"> </a>
+                                <a href="{% url "singal_product" product.id %}"><img src="{{  product.img.url  }}" class="card-img-top" style="height: 200px;"   alt="Product Image"> </a>
                                 <p class="card-text text-muted">
                                     {{  product.description | slice:":50"  }}...
                                 </p>
