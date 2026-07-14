@@ -114,7 +114,7 @@ def home(request):
 
 def category(request, name):
     categories = Category.objects.all()
-    category = Category.objects.get(name=name)
+    category = get_object_or_404(Category, name=name)
     print(category)
     products = category.product_set.all()
     print(products)
