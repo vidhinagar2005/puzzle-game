@@ -5,7 +5,7 @@ from .import views
 urlpatterns = [
     path('', views.home,name='home'),
     # path('makeup/',views.makeup, name='makeup'),
-    path('category/<str:name>', views.category, name='category'),
+    path('category/<str:name>', views.category, name='category2'),
     path('singal_product/<int:product_id>', views.singal_product, name='singal_product'),
     path('add_to_cart/<int:product_id>',views.add_to_cart, name='add_to_cart'),
     path('cart_view',views.cart_view, name='cart_view'),
